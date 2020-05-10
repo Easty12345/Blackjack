@@ -11,14 +11,6 @@ public class DrawCard {
     public static ArrayList<PlayingCard> playerHand = new ArrayList<>();
     public static ArrayList<PlayingCard> dealerHand = new ArrayList<>();
 
-    public static void main(String args[]) {
-        DrawCard tester = new DrawCard();
-        tester.createDeck();
-        tester.initialDeal();
-        tester.displayHand();
-        System.out.println(tester.checkTotal(playerHand));
-    }
-
     public void createDeck() {
         String[] suits = {"Spades", "Clubs", "Diamonds", "Hearts"};
         for (String currentSuit : suits) {
@@ -120,8 +112,6 @@ public class DrawCard {
         for (int i = 0; i < (hand.size()); i++) {
             total += hand.get(i).getNumber();
         }
-        //while copyofhand contains one or more aces AND total > 21
-        //remvove 10 frmo total and remove 1 ace frmo copyofhand
         for (int i = 0; i < (hand.size()); i++) {
             String name = hand.get(i).getName();
             if (name.equals("Ace")) {
